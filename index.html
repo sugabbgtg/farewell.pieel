@@ -170,7 +170,8 @@
 							</article>
 						</div>
 						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
+							<!-- <li><a href="#" class="button">Full Portfolio</a></li> -->
+							 <li><a href="#" id="btn-kejutan" class="button">Klik untuk Kejutan! 🎉</a></li>
 						</ul>
 					</section>
 				
@@ -579,6 +580,23 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             btn.style.borderColor = "#2ebd59";
         }
     }
-</script>
+		</script>
+		<!-- Script untuk memanggil alat pembuat Confetti -->
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js">
+		</script>
+
+		<script>
+		document.getElementById('btn-kejutan').addEventListener('click', function(e) {
+			e.preventDefault(); // Mencegah layar lompat ke atas saat diklik
+
+			// Pengaturan ledakan confetti
+			confetti({
+				particleCount: 150, // Jumlah kertasnya (bisa ditambah/dikurangi)
+				spread: 80,         // Seberapa lebar ledakannya
+				origin: { y: 0.6 }, // Titik pusat ledakan (agak ke bawah sedikit)
+				colors: ['#2ebd59', '#2b7bb9', '#ffb6b9', '#fae3d9'] // Warna-warni kertasnya
+			});
+		});
+	</script>
 	</body>
 </html>
