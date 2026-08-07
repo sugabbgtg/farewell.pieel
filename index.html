@@ -171,7 +171,7 @@
 						</div>
 						<ul class="actions">
 							<!-- <li><a href="#" class="button">Full Portfolio</a></li> -->
-							 <li><a href="#" id="btn-kejutan" class="button">Klik untuk Kejutan! 🎉</a></li>
+							 <li><a href="#" id="btn-kejutan" class="button">Cilukba 🎉</a></li>
 						</ul>
 					</section>
 				
@@ -543,7 +543,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<li><a href="#" class="icon solid fa-heart"><span class="label">Hati</span></a></li>
 						<li><a href="#" class="icon solid fa-paper-plane"><span class="label">Terbang</span></a></li>
 					</ul>
-						<li>&copy; P2RGA</li><li>Design: <a href="https://www.instagram.com/_bagusriskih?igsh=OWV1cDE2N2ZsMnVz&utm_source=qr">Sugab</a></li>
+						<li>&copy; P2RGA</li><li>Design: <a href="https://www.instagram.com/_bagusriskih?igsh=OWV1cDE2N2ZsMnVz&utm_source=qr">Teman Teman tercinta</a></li>
 					</ul>
 				</div>
 			</footer>
@@ -581,22 +581,34 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         }
     }
 		</script>
+
+		<!-- Audio Terompet Tersembunyi -->
+		<audio id="suara-terompet">
+			<source src="confetti-pop-sound.mp3" type="audio/mpeg">
+		</audio>
+
+
 		<!-- Script untuk memanggil alat pembuat Confetti -->
 		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js">
 		</script>
 
 		<script>
-		document.getElementById('btn-kejutan').addEventListener('click', function(e) {
-			e.preventDefault(); // Mencegah layar lompat ke atas saat diklik
+    document.getElementById('btn-kejutan').addEventListener('click', function(e) {
+        e.preventDefault(); // Mencegah layar lompat ke atas saat diklik
 
-			// Pengaturan ledakan confetti
-			confetti({
-				particleCount: 150, // Jumlah kertasnya (bisa ditambah/dikurangi)
-				spread: 80,         // Seberapa lebar ledakannya
-				origin: { y: 0.6 }, // Titik pusat ledakan (agak ke bawah sedikit)
-				colors: ['#2ebd59', '#2b7bb9', '#ffb6b9', '#fae3d9'] // Warna-warni kertasnya
-			});
-		});
-	</script>
+        // 1. Memutar Suara Terompet
+        var terompet = document.getElementById("suara-terompet");
+        terompet.currentTime = 0; // Mengulang suara dari detik ke-0 (biar bisa dispam klik berkali-kali!)
+        terompet.play();
+
+        // 2. Meledakkan Confetti
+        confetti({
+            particleCount: 500, 
+            spread: 80,         
+            origin: { y: 0.6 }, 
+            colors: ['#2ebd59', '#2b7bb9', '#ffb6b9', '#fae3d9'] 
+        });
+    });
+		</script>
 	</body>
 </html>
